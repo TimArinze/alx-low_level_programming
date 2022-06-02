@@ -1,10 +1,11 @@
 #include<stdio.h>
-/*My main function*/
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	/**
-	 * Using put function instead of printf let wait for the result
-	 */
 	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }

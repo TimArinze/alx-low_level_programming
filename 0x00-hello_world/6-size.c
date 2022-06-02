@@ -11,3 +11,4 @@ int main(void)
 	printf("Size of a float: %d\n", sizeof(float));
 	printf("Size of a double: %d\n", sizeof(double));
 	return (0);
+}

@@ -1,7 +1,9 @@
 #include<stdio.h>
-/*My main function*/
 int main(void)
 {
-	puts("Programming is like building a multilingual puzzle\n");
-	return 0;
+	/**
+	 * Using put function instead of printf let wait for the result
+	 */
+	puts("\"Programming is like building a multilingual puzzle\n");
+	return (0);
 }

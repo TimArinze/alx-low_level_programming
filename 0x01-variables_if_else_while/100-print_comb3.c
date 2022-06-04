@@ -7,17 +7,30 @@
 int main(void)
 {
 	int n;
+	int m;
 
-	for (n = 1; n < 100; n++)
+	n = 0
+	while (n < 10)
 	{
-		if (n != 1 && n != 10 && n != 11 && n != 22 && n != 33 && n != 44
-				&& n != 55 && n != 66 && n != 77 && n != 88 && n != 99)
-			putchar('0' + n);
-			if (n != 98)
+		m = 0;
+		while (m < 10)
+		{
+			if (n != m && n < m)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar('0' + n);
+				putchar('0' + m);
+
+				if (n + m != 17)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
+
+			m++;
+		}
+		n++;
 	}
+	putchar('\n');
 	return (0);
 }

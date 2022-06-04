@@ -14,7 +14,7 @@ int main(void)
 	while (c < 10)
 	{
 		b = 0;
-		while (d < 10)
+		while (b < 10)
 		{
 			a = 0;
 			while (a < 10)
@@ -25,7 +25,7 @@ int main(void)
 					putchar('0' + b);
 					putchar('0' + a);
 
-					if (c + d + e != 9 + 8 + 7)
+					if (a + b + c != 9 + 8 + 7)
 					{
 						putchar(',');
 						putchar(' ');

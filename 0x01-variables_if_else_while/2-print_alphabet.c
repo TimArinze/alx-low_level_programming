@@ -18,6 +18,7 @@ int main(void)
 	char alphabet;
 
 	for (alphabet = 'a', alphabet <= 'z', ++alphabet)
-		putchar(alphabet);
+		putchar("%c\n", alphabet);
+	putchar("\n");
 	return (0);
 }

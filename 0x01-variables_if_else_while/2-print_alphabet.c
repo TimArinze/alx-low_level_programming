@@ -17,7 +17,7 @@ int main(void)
 	/* your code goes there */
 	char d;
 
-	for (d = 'a', d <= 'z', ++d)
-		putchar("%c\n", d);
+	for (d = 'a'; d <= 'z'; ++d)
+		putchar(d);
 	return (0);
 }

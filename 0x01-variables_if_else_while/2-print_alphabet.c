@@ -15,10 +15,9 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
-	char alphabet;
+	char d;
 
-	for (alphabet = 'a', alphabet <= 'z', ++alphabet)
-		putchar("%c\n", alphabet);
-	putchar("\n");
+	for (d = 'a', d <= 'z', ++d)
+		putchar("%c\n", d);
 	return (0);
 }

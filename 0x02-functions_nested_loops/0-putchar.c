@@ -1,11 +1,17 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * main - Entry point
+ * main - prints -putchar, followed by newline
  *
- * Return: Always 0 (Success)
+ * Return: 0 (Success)
  */
 int main(void)
 {
-	printf("_putchar\n");
+	char *putchar;
+
+	for (putchar = "_putchar\n"; *putchar != '\0'; ++putchar)
+	{
+		_putchar(*putchar);
+	}
 	return (0);
 }

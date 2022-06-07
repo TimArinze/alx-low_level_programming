@@ -2,13 +2,12 @@
 /**
  * _abs - prints the absolute value
  *
- *@int: function argument
+ *@n: function argument
  *
  * Return: Always return 0
  */
-int _abs(int)
+int _abs(int n)
 {
-	int n;
 
 	if (n < 0)
 	{

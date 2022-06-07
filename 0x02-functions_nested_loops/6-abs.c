@@ -8,15 +8,16 @@
  */
 int _abs(int n)
 {
+	int number;
 
 	if (n < 0)
 	{
-		n *= -1;
-		_putchar('0' + n);
+		number = n * (-1);
+		return (number);
 	}
 	else
 	{
-		_putchar('0' + n);
+		return (n);
 	}
 	return (0);
 }

@@ -18,4 +18,5 @@ int _abs(int n)
 	{
 		_putchar('0' + n);
 	}
+	return (0);
 }

@@ -6,16 +6,26 @@
  */
 int main(void)
 {
-	float a = 1, b = 2, c = 0, i;
+	float first = 0, second = 1, next, c;
 
-	printf(" 1, 2");
-	for (i = 1; i <= 96; i++)
+	for (c = 0; c <= 98; c++)
 	{
-		c = a + b;
-		a = b;
-		b = c;
-		printf(", %.0f", c);
+		if (c <= 1)
+			next = c;
+		else
+		{
+			next = first + second;
+			first = second;
+			second = next;
+		}
+		if (c != 98)
+		{
+			printf("%.0f, ", next);
+		}
+		else
+		{
+			printf("%.0f\n", next);
+		}
 	}
-	printf("\n");
 	return (0);
 }

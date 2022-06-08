@@ -24,11 +24,11 @@ int main(void)
 		}
 		if (c != 95 && next > 1)
 		{
-			printf("%.0f, ", next);
+			printf("%ld, ", next);
 		}
 		if (c == 95)
 		{
-			printf("%.0f\n", next);
+			printf("%ld\n", next);
 		}
 	}
 	return (0);

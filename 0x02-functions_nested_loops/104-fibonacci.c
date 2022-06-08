@@ -19,7 +19,7 @@ int main(void)
 			first = second;
 			second = next;
 		}
-		if (c != 98 && c > 1)
+		if (c != 98 && c >= 2)
 		{
 			printf("%.0f, ", next);
 		}

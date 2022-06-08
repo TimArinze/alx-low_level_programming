@@ -16,7 +16,7 @@ int main(void)
 		next = second;
 		second += first;
 
-		if (c > 96)
+		if (c > 95)
 		{
 			printf("%.0f\n", second);
 			break;

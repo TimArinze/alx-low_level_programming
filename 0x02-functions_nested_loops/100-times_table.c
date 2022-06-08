@@ -9,7 +9,7 @@
  */
 void print_times_table(int n)
 {
-	int a, b, result;
+	int a, b, c;
 
 	if (n <= 15 && n >= 0)
 	{
@@ -17,21 +17,35 @@ void print_times_table(int n)
 		{
 			for (b = 0; b <= n; b++)
 			{
-				result = a * b;
-				if (b == n)
+				c = a * b;
+				if (b != 0 && c >= 0 && c < 10)
 				{
-					printf("%3i ", result);
+					_putchar(' ');
+					_putchar(' ');
 				}
-				else if (b == 0)
+				if (c < 10)
 				{
-					printf("%i,", result);
+					_putchar('0' + c);
 				}
-				else
+				if (c > 9 && c < 100)
 				{
-					printf("%3i, ", result);
+					_putchar(' ');
+					_putchar('0' + (c / 10));
+					_putchar('0' + (c % 10));
+				}
+				if (c > 99)
+				{
+					_putchar('0' + (c / 100));
+					_putchar('0' + (c / 10));
+					_putchar('0' + (c % 10));
+				}
+				if (b != n)
+				{
+					_putchar(',');
+					_putchar(' ');
 				}
 			}
-			printf("\n");
+			_putchar('\n');
 		}
 	}
 }

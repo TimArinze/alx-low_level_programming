@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 /**
  * main - Entry point
@@ -7,10 +8,11 @@
 int main(void)
 {
 	int c;
-	double first = 0, second = 1, next;
+	long int first = 1, second = 2, next;
 
-	printf("%0.f, ", second);
-	for (c = 0; c <= 99; c++)
+	printf("%ld, ", first);
+	printf("%ld, ", second);
+	for (c = 0; c < 96; c++)
 	{
 		if (c <= 1)
 			next = c;
@@ -20,11 +22,11 @@ int main(void)
 			first = second;
 			second = next;
 		}
-		if (c != 99 && next > 1)
+		if (c != 95 && next > 1)
 		{
 			printf("%.0f, ", next);
 		}
-		if (c == 99)
+		if (c == 95)
 		{
 			printf("%.0f\n", next);
 		}

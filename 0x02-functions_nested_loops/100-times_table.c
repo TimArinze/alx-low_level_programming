@@ -18,13 +18,13 @@ void print_times_table(int n)
 			for (b = 0; b <= n; b++)
 			{
 				result = a * b;
-				if (b == n)
+				if (a == n)
 				{
-					printf("%d", result);
+					printf("%3d", result);
 				}
-				else if (a == 0)
+				else if (b == 0)
 				{
-					printf("%d", result);
+					printf("%d,", result);
 				}
 				else
 				{

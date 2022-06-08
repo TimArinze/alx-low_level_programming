@@ -6,9 +6,10 @@
  */
 int main(void)
 {
-	float first = 1, second = 2, next, c;
+	float first = 0, second = 1, next, c;
 
-	for (c = 0; c <= 97; c++)
+	printf("%.0f, ", second);
+	for (c = 0; c <= 98; c++)
 	{
 		if (c <= 1)
 			next = c;
@@ -18,11 +19,11 @@ int main(void)
 			first = second;
 			second = next;
 		}
-		if (c != 98)
+		if (c != 98 && c > 1)
 		{
 			printf("%.0f, ", next);
 		}
-		else
+		if (c == 98)
 		{
 			printf("%.0f\n", next);
 		}

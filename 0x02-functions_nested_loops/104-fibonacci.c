@@ -14,21 +14,18 @@ int main(void)
 	printf("%ld, ", second);
 	for (c = 0; c < 96; c++)
 	{
-		if (c <= 1)
-			next = c;
+		next = second;
+		second += first;
+
+		if (c > 97)
+		{
+			printf("%ld\n", second);
+			break;
+		}
 		else
 		{
-			next = first + second;
-			first = second;
-			second = next;
-		}
-		if (c != 95 && next > 1)
-		{
 			printf("%ld, ", next);
-		}
-		if (c == 95)
-		{
-			printf("%ld\n", next);
+			first = next;
 		}
 	}
 	return (0);

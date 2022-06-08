@@ -8,10 +8,10 @@
 int main(void)
 {
 	int c;
-	long int first = 1, second = 2, next;
+	double first = 1, second = 2, next;
 
-	printf("%ld, ", first);
-	printf("%ld, ", second);
+	printf("%.0f, ", first);
+	printf("%.0f, ", second);
 	for (c = 0; c < 96; c++)
 	{
 		next = second;
@@ -19,12 +19,12 @@ int main(void)
 
 		if (c > 97)
 		{
-			printf("%ld\n", second);
+			printf("%.0f\n", second);
 			break;
 		}
 		else
 		{
-			printf("%ld, ", next);
+			printf("%.0f, ", next);
 			first = next;
 		}
 	}

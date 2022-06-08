@@ -7,9 +7,9 @@
 int main(void)
 {
 	int c;
-	unsigned long first = 0, second = 1, next;
+	unsigned long long first = 0, second = 1, next;
 
-	printf("%lu, ", second);
+	printf("%d, ", second);
 	for (c = 0; c < 98; c++)
 	{
 		if (c <= 1)
@@ -22,11 +22,11 @@ int main(void)
 		}
 		if (c != 98 && next > 1)
 		{
-			printf("%lu, ", next);
+			printf("%d, ", next);
 		}
 		if (c == 98)
 		{
-			printf("%lu\n", next);
+			printf("%d\n", next);
 		}
 	}
 	return (0);

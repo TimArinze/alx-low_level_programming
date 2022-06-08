@@ -25,6 +25,7 @@ void print_times_table(int n)
 				else if (a == 0)
 				{
 					printf("%d", result);
+				}
 				else
 				{
 					printf("%3d, ", result);

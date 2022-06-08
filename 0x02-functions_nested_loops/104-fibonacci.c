@@ -9,7 +9,7 @@ int main(void)
 	int c;
 	unsigned long long first = 0, second = 1, next;
 
-	printf("%d, ", second);
+	printf("%llu, ", second);
 	for (c = 0; c < 98; c++)
 	{
 		if (c <= 1)
@@ -22,11 +22,11 @@ int main(void)
 		}
 		if (c != 98 && next > 1)
 		{
-			printf("%d, ", next);
+			printf("%llu, ", next);
 		}
 		if (c == 98)
 		{
-			printf("%d\n", next);
+			printf("%llu\n", next);
 		}
 	}
 	return (0);

@@ -10,7 +10,7 @@ int main(void)
 	unsigned long first = 0, second = 1, next;
 
 	printf("%lu, ", second);
-	for (c = 0; c <= 98; c++)
+	for (c = 0; c < 98; c++)
 	{
 		if (c <= 1)
 			next = c;
@@ -24,7 +24,7 @@ int main(void)
 		{
 			printf("%lu, ", next);
 		}
-		if (c == 98)
+		if (c == 97)
 		{
 			printf("%lu\n", next);
 		}

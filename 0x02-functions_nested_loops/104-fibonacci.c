@@ -10,7 +10,7 @@ int main(void)
 	double first = 0, second = 1, next;
 
 	printf("%0.f, ", second);
-	for (c = 0; c < 98; c++)
+	for (c = 0; c <= 99; c++)
 	{
 		if (c <= 1)
 			next = c;
@@ -20,11 +20,11 @@ int main(void)
 			first = second;
 			second = next;
 		}
-		if (c != 98 && next > 1)
+		if (c != 99 && next > 1)
 		{
 			printf("%.0f, ", next);
 		}
-		if (c == 98)
+		if (c == 99)
 		{
 			printf("%.0f\n", next);
 		}

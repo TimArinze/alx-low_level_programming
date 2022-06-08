@@ -18,7 +18,7 @@ void print_times_table(int n)
 			for (b = 0; b <= n; b++)
 			{
 				result = a * b;
-				if (a == n)
+				if (b == n)
 				{
 					printf("%3d", result);
 				}

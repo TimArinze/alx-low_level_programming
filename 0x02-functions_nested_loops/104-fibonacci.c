@@ -24,7 +24,7 @@ int main(void)
 		{
 			printf("%lu, ", next);
 		}
-		if (c == 97)
+		if (c == 98)
 		{
 			printf("%lu\n", next);
 		}

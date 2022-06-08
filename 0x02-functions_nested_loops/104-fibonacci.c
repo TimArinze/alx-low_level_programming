@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int a = 1, b = 2, c, i;
+	float a = 1, b = 2, c = 0, i;
 
 	printf(" 1, 2");
 	for (i = 1; i <= 96; i++)
@@ -14,7 +14,7 @@ int main(void)
 		c = a + b;
 		a = b;
 		b = c;
-		printf(", %d", c);
+		printf(", %.0f", c);
 	}
 	printf("\n");
 	return (0);

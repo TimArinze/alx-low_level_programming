@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	float first = 0, second = 1, next, c;
+	float first = 1, second = 2, next, c;
 
 	for (c = 0; c <= 98; c++)
 	{

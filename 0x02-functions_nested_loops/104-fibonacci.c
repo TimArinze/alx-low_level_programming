@@ -7,7 +7,7 @@
 int main(void)
 {
 	int c;
-	unsigned long long first = 0, second = 1, next;
+	unsigned long long int first = 0, second = 1, next;
 
 	printf("%llu, ", second);
 	for (c = 0; c < 98; c++)

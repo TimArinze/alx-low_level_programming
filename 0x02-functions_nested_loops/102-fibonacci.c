@@ -10,16 +10,16 @@ int main(void)
 	int count = 2;
 	long int i = 1, j = 2, k;
 
-	printf("%d, ", i);
+	printf("%ld, ", i);
 	for (; count <= 50; count++)
 	{
 		if (count == 50)
 		{
-			printf("%d\n", j);
+			printf("%ld\n", j);
 		}
 		else
 		{
-			printf("%d, ", j);
+			printf("%ld, ", j);
 		}
 		k = j;
 		j += i;

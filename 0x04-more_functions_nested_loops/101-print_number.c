@@ -12,7 +12,7 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
-	unsigned int n;
+	unsigned int n = 0;
 
 	/**
 	 * First remove the last digit of number and print the remaining

@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	long int n = 612852475143, div, ans;
+	long long int n = 612852475143, div, ans;
 
 	for (div = 2; div < n; div++)
 	{
@@ -15,6 +15,6 @@ int main(void)
 			ans = n / div;
 		}
 	}
-	printf("%li\n", ans);
+	printf("%lli\n", ans);
 	return (0);
 }

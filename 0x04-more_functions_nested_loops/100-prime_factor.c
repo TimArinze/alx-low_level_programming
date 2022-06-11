@@ -12,9 +12,9 @@ int main(void)
 	{
 		if (n % div == 0)
 		{
-			ans = n / div;
+			n /= div;
 		}
 	}
-	printf("%li\n", ans);
+	printf("%li\n", n);
 	return (0);
 }

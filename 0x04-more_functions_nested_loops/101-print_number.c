@@ -16,6 +16,7 @@ void print_number(int n)
 	else
 	{
 		a = n;
+	}
 	/**
 	 * First remove the last digit of number and print the remaining
 	 * digits using recursion, then print the last digit

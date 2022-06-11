@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	long int n = 612852475143, div, ans;
+	long int n = 612852475143, div;
 
 	for (div = 2; div < n; div++)
 	{

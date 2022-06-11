@@ -6,15 +6,15 @@
  */
 int main(void)
 {
-	int n = 612852475143, div, ans;
+	long int n = 612852475143, div, ans;
 
 	for (div = 2; div < n; div++)
 	{
-		ans = n / div;
-		if (n % div == 0 && div >= ans)
+		if (n % div == 0)
 		{
-			printf("%i\n", div)
+			ans = n / div;
 		}
 	}
+	printf("%li\n", ans);
 	return (0);
 }

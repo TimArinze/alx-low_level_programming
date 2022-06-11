@@ -8,8 +8,8 @@ void print_number(int n)
 {
 	if (n < 0)
 	{
-		n *= -1;
 		_putchar('-');
+		n = -n;
 	}
 	if (n == 0)
 		_putchar('0');

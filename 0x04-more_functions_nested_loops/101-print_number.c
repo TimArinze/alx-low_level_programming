@@ -6,11 +6,14 @@
  */
 void print_number(int n)
 {
+
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
+
+	unsigned int n;
 	/**
 	 * First remove the last digit of number and print the remaining
 	 * digits using recursion, then print the last digit

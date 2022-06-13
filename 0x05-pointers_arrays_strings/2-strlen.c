@@ -10,5 +10,5 @@ int _strlen(char *s)
 
 	for (a = 0; s[a] != '\0'; ++a)
 		length = a;
-	return (a);
+	return (length);
 }

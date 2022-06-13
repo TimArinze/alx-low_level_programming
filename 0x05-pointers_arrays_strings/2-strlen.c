@@ -6,13 +6,8 @@
  */
 int _strlen(char *s)
 {
-	int a, length;
+	int a;
 
-	a = 0;
-	while (s[a] != '\0')
-	{
-		length = a;
-		++a;
-	}
-	return (length);
+	for (a = 0; s[a]; a++);
+	return (a);
 }

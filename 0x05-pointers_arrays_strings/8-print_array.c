@@ -12,21 +12,23 @@ void print_array(int *a, int n)
 	int size;
 
 	size = sizeof(a);
-	if (size >= 0)
+	if (size > 0)
 	{
 		n = 0;
 		while (a[n])
 		{
 
-			if (n != size - 1)
+			if (n < size - 1)
 			{
 				printf("%i, ", a[n]);
 			}
-			else
+			if (n == size - 1)
 			{
 				printf("%i\n", a[n]);
 			}
 			n++;
 		}
 	}
+	else
+		printf('\n');
 }

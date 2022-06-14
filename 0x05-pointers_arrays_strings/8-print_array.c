@@ -9,13 +9,16 @@
  */
 void print_array(int *a, int n)
 {
-	n = 0;
-	if (n >= 0)
+	int size;
+
+	size = sizeof(a);
+	if (size >= 0)
 	{
+		n = 0;
 		while (a[n])
 		{
 
-			if (n != sizeof(a) - 1)
+			if (n != size - 1)
 			{
 				printf("%i, ", a[n]);
 			}

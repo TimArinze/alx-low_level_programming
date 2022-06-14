@@ -11,18 +11,18 @@ void print_array(int *a, int n)
 {
 	int size;
 
-	size = sizeof(a);
+	size = sizeof(a) / sizeof(a[0]) -1;
 	if (size > 0)
 	{
 		n = 0;
 		while (a[n])
 		{
 
-			if (n < size - 1)
+			if (n < size)
 			{
 				printf("%i, ", a[n]);
 			}
-			if (n == size - 1)
+			if (n == size)
 			{
 				printf("%i\n", a[n]);
 			}

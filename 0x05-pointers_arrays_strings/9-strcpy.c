@@ -7,15 +7,15 @@
  * @src: copied to
  * Return: char
  */
-char *_strcpy(char *dest, char *src, int n)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	for (i = 0; src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
 	}
-	for (; i < n; i++)
+	for (; src[i] == '\0'; i++)
 	{
 		dest[i] = '\0';
 	}

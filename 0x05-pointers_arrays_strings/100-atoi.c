@@ -8,9 +8,9 @@
  */
 int _atoi(char *s)
 {
-	int a = 0;
+	int a = 0, i;
 
-	for (int i = 0; s[i] != '\0'; ++i)
+	for (i = 0; s[i] != '\0'; ++i)
 		a = a * 10 + s[i] - '0';
 	return (a);
 }

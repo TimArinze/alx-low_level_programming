@@ -13,7 +13,7 @@ char *leet(char *s)
 
 	for (i = 0; s[i] = '\0'; i++)
 	{
-		for (j = 0; (upper[j] || lower[j]) != '\0'; j++)
+		for (j = 0; (upper[j] || lower[j]) <= 5; j++)
 		{
 			if (s[i] == (lower[j] || upper[j]))
 				s[i] = number[j];

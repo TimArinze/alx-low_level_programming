@@ -11,14 +11,13 @@ char *leet(char *s)
 	char upper[] = "AEOTL";
 	char number[] = "43071";
 
-	for (i = 0; s[i] = '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{
 			if (s[i] == lower[j] || s[i] == upper[j])
 			{
 				s[i] = number[j];
-				break;
 			}
 		}
 	}

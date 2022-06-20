@@ -1,21 +1,24 @@
 #include "main.h"
 /**
  * _strspn - function that gets the length of a prefix substring
+ * before the null value
  * @s: string
  * @accept: number of btyes
  * Return: unsigned int
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int i;
-	char *temp = s;
+	int i, j;
 
-	for (i = 0; accept[i] != '\0'; i++)
+	for (i = 0; s[i]; i++)
 	{
-		if (accept[0] == '\0')
-			return (0);
-
-		if (s[i] == accept[i])
-			return (s - temp);
+		for (j = 0; accept[j]; j++)
+		{
+			if (s[j] == accept[i])
+				break;
+		}
+		if (!s[j])
+			break;
 	}
+	return (i);
 }

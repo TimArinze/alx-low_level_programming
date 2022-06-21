@@ -8,8 +8,7 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	char *a = haystack;
-	char *b;
+	char *b, *a;
 
 	while (*haystack)
 	{
@@ -22,5 +21,6 @@ char *_strstr(char *haystack, char *needle)
 			break;
 		haystack++;
 	}
+	a = &(*haystack)
 	return (a);
 }

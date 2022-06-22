@@ -24,7 +24,7 @@ int main(void)
 
 	for (i = 2; i <= 98; i++)
 	{
-		printf("%ll, ", fibonacci(i));
+		printf("%f, ", fibonacci(i));
 	}
 	return (0);
 }

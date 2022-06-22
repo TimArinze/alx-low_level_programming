@@ -1,31 +1,30 @@
 #include "main.h"
 #include <stdio.h>
 /**
+ * fibonacci - function that prints fibonacci numbers
+ * @i: the fibonacci number you want
+ * Return: fibonacci number
+ */
+double fibonacci(double i)
+{
+	if (i == 1)
+	{
+		return (1);
+	}
+	return (fibonacci(i - 1) + fibonacci(i - 2));
+}
+/**
  * main - Entry point
  *
  * Return: 0
  */
 int main(void)
 {
-	int c;
-	double first = 1, second = 2, next;
+	int i;
 
-	printf("%.0f, ", first);
-	for (c = 0; c <= 96; c++)
+	for (i = 2; i <= 98; i++)
 	{
-		next = second;
-		second += first;
-
-		if (c > 95)
-		{
-			printf("%.0f\n", second);
-			break;
-		}
-		else
-		{
-			printf("%.0f, ", next);
-			first = next;
-		}
+		printf("%ll, ", fibonacci(i));
 	}
 	return (0);
 }

@@ -7,6 +7,7 @@
  */
 double fibonacci(double i)
 {
+
 	if (i == 1)
 	{
 		return (1);
@@ -22,9 +23,10 @@ int main(void)
 {
 	int i;
 
-	for (i = 2; i <= 98; i++)
+	for (i = 2; i < 98; i++)
 	{
 		printf("%f, ", fibonacci(i));
 	}
+	printf("%f\n", fibonacci(98));
 	return (0);
 }

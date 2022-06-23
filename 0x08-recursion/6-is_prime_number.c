@@ -16,10 +16,10 @@ int is_prime_number(int n)
  */
 int prime(int n, int div)
 {
-	if (n < 2)
-		return (0);
-	if (n % div == 0)
+	if (n == div)
 		return (1);
+	else if (n % div == 0)
+		return (0);
 	else
-		prime(n, div - 1);
+		prime(div + 1, n);
 }

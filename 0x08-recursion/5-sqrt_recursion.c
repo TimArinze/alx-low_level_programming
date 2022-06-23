@@ -10,7 +10,7 @@ int _sqrt_recursion(int n)
 	return (square(n, 1));
 }
 /**
- * _sqrt - Returns the square of a number
+ * square - Returns the square of a number
  * @n: test number
  * @m: the squared number
  * Return: int

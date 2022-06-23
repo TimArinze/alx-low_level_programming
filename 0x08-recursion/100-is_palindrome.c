@@ -7,11 +7,10 @@
  */
 int is_palindrome(char *s)
 {
-	int i, j;
+	int j;
 
-	i = 0;
 	j = len(s) - 1;
-	return (check(s, i, j, j % 2));
+	return (check(s, 0, j, j % 2));
 }
 /**
  * len - function
@@ -39,5 +38,5 @@ int check(char *s, int i, int j, int pair)
 	else if (s[i] != s[j])
 		return (0);
 	else
-		return (check(s, --i, --j, pair));
+		return (check(s, i + 1, j - 1, pair));
 }

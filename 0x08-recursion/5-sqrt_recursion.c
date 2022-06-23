@@ -9,7 +9,7 @@ int _sqrt_recursion(int n)
 {
 	int a, result;
 
-	if (n / a != a)
+	if (a * a = n)
 		return (-1);
 	if (n == 1)
 		result = 1;

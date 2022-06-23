@@ -24,6 +24,7 @@ int len(char *s)
 	if (*s > '\0')
 	n = n + len(s + 1);
 	return (n);
+}
 /**
  * check - function
  * @s: string

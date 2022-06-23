@@ -18,8 +18,8 @@ int prime(int n, int div)
 {
 	if (n == div && n > 1)
 		return (1);
-	else if (n % div == 0)
+	else if (n % div == 0 || n <= 1)
 		return (0);
 	else
-		return (prime(div + 1, n));
+		return (prime(n, div + 1));
 }

@@ -21,5 +21,7 @@ int prime(int n, int div)
 	else if (n % div == 0)
 		return (0);
 	else
+	{
 		prime(div + 1, n);
+	}
 }

@@ -24,7 +24,7 @@ int len(char *s)
 
 	if (*s > '\0')
 	n = n + len(s + 1);
-	return (j);
+	return (n);
 /**
  * check - function
  * @s: string
@@ -32,7 +32,7 @@ int len(char *s)
  * @j: interger
  * Return: int
  */
-int check(char *s, int i, int j)
+int check(char *s, int i, int j, int pair)
 {
 	if ((s[i] == s[j] && pair != 0) || (i == j + 1 && pair == 0))
 		return (1);

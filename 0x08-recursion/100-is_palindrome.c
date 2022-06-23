@@ -12,20 +12,20 @@ int is_palindrome(char *s)
 
 	i = 0;
 	j = strlen(*s) - 1;
-	return (check_palindrome(*s, i, j));
+	return (check(*s, i, j));
 }
 /**
- * check_palindrome - function
+ * check - function
  * @s: string
  * @i: interger
  * @j: interger
  * Return: int
  */
-int check_palindrome(char *s, int i, int j)
+int check(char *s, int i, int j)
 {
 	if (s[i] != s[j])
 		return (0);
 	if (s[i] == s[j])
 		return (1);
-	return (check_palindrome(s, --i, --j));
+	return (check(s, --i, --j));
 }

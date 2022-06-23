@@ -19,10 +19,7 @@ int prime(int n, int div)
 	if (n < 2)
 		return (0);
 	if (n % div == 0)
-		return (0);
-	if (div * div > n)
 		return (1);
 	else
-		return (0);
-	return (prime(n, div + 1));
+		prime(n, div - 1);
 }

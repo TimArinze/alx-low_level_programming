@@ -22,5 +22,4 @@ int prime(int n, int div)
 		return (0);
 	else
 		return (prime(div + 1, n));
-	}
 }

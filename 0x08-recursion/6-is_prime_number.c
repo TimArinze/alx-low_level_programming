@@ -16,13 +16,11 @@ int is_prime_number(int n)
  */
 int prime(int n, int div)
 {
-	if (n == div)
+	if (n == div && n > 1)
 		return (1);
+	else if (n % div == 0)
+		return (0);
 	else
-	{
-		if (n % div == 0)
-			return (0);
-		else
-			prime(div + 1, n);
+		return (prime(div + 1, n));
 	}
 }

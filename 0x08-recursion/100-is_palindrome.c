@@ -30,6 +30,7 @@ int len(char *s)
  * @s: string
  * @i: interger
  * @j: interger
+ * @pair: int
  * Return: int
  */
 int check(char *s, int i, int j, int pair)

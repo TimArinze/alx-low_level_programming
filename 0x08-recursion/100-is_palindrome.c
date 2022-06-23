@@ -1,5 +1,4 @@
 #include "main.h"
-#include "string.h"
 /**
  * is_palindrome - A function that returns 1
  * if a string is a palindrome and 0 if not
@@ -11,9 +10,21 @@ int is_palindrome(char *s)
 	int i, j;
 
 	i = 0;
-	j = strlen(*s) - 1;
-	return (check(*s, i, j));
+	j = len(s) - 1;
+	return (check(s, i, j, j % 2));
 }
+/**
+ * len - function
+ * @s: string
+ * Return: int
+ */
+int len(char *s)
+{
+	int n = 0;
+
+	if (*s > '\0')
+	n = n + len(s + 1);
+	return (j);
 /**
  * check - function
  * @s: string
@@ -23,9 +34,10 @@ int is_palindrome(char *s)
  */
 int check(char *s, int i, int j)
 {
-	if (s[i] != s[j])
-		return (0);
-	if (s[i] == s[j])
+	if ((s[i] == s[j] && pair != 0) || (i == j + 1 && pair == 0))
 		return (1);
-	return (check(s, --i, --j));
+	else if (s[i] != s[j])
+		return (0);
+	else
+		return (check(s, --i, --j, pair));
 }

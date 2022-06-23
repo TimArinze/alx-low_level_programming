@@ -7,15 +7,23 @@
  */
 int _sqrt_recursion(int n)
 {
-	int a = 1, result;
-
-	if (a * a == n)
-		return (-1);
-	if (n == 1)
-		result = 1;
+	if (n == 0 || n == 1)
+		return (n);
 	else
-	{
-		result = n / _sqrt_recursion(n);
-	}
-	return (result);
+		return (_sqrt(0, n));
+}
+/**
+ * _sqrt - Returns the square of a number
+ * @n: test number
+ * @m: the squared number
+ * Return: int
+ */
+int _sqrt(int n, int m)
+{
+	if (m * m == n)
+		return (m);
+	else if (m * m < n)
+		return (_sqrt(n, m + 1));
+	else
+		return (-1);
 }

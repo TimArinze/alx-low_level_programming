@@ -9,8 +9,8 @@ int is_palindrome(char *s)
 {
 	int j;
 
-	j = len(s) - 1;
-	return (check(s, 0, j, j % 2));
+	j = len(s);
+	return (check(s, 0, j - 1, j % 2));
 }
 /**
  * len - function
@@ -22,7 +22,7 @@ int len(char *s)
 	int n = 0;
 
 	if (*s > '\0')
-	n = n + len(s + 1);
+	n = n + len(s + 1) + 1;
 	return (n);
 }
 /**

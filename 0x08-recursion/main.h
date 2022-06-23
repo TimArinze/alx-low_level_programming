@@ -10,3 +10,5 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int square(int n, int m);
 int prime(int n, int div);
+int len(char *s);
+int check( char *s, int i, int j, int pair);

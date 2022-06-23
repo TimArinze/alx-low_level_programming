@@ -16,6 +16,10 @@ int is_prime_number(int n)
  */
 int prime(int n, int div)
 {
+	if (n < 2)
+		return (0);
+	if (n % div == 0)
+		return (0);
 	if (div * div > n)
 		return (1);
 	else

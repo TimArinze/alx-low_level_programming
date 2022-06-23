@@ -18,10 +18,11 @@ int prime(int n, int div)
 {
 	if (n == div)
 		return (1);
-	else if (n % div == 0)
-		return (0);
 	else
 	{
-		prime(div + 1, n);
+		if (n % div == 0)
+			return (0);
+		else
+			prime(div + 1, n);
 	}
 }

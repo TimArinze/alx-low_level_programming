@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * _strdup - function that returns a pointer to a new string
  * @str: string
@@ -11,8 +12,8 @@ char *_strdup(char *str)
 	char *copy;
 
 	len = strlen(str) + 1;
-	if (!(copy == malloc((unsigned int)len)))
+	copy = malloc(len);
+
+	if (copy == NULL)
 		return (NULL);
-	memcpy(copy, str, len);
-	return (copy);
-}
+	return (char *);

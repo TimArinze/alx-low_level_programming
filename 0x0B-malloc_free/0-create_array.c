@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 /**
  * create_array - function that creates an array of chars and initializes
  * it with a specific char
@@ -8,12 +9,10 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char p;
 
 	size = sizeof(char) * 1;
-	p = &c;
 	if (size == 0)
 		return (NULL);
 	else
-		return (*p);
+		return (*c);
 }

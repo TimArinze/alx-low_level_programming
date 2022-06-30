@@ -26,6 +26,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (n = 0; s1[n]; n++)
 		m[i++] = s1[size];
 	for (size = 0; s2[size]; size++)
-		m[i++] = s2[size];
+		m[i++] = s2[n];
 	return (m);
 }

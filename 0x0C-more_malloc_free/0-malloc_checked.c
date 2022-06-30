@@ -7,7 +7,7 @@
 void *malloc_checked(unsigned int b)
 {
 	int *m;
-	m = malloc(sizeof(b));
+	m = malloc(sizeof(int*) * b);
 	if (b == 0 || m == 0)
 		return (98);
 	else

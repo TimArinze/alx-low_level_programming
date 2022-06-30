@@ -12,8 +12,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *m;
 	int i = 0, size;
 
-	if (s2 == NULL || s1 == NULL)
+	if (s2 == NULL)
 		s2 = "\0";
+	if (s1 == NULL)
+		s1 = "\0";
 	for (n = 0; s2[n]; n++)
 		;
 	for (size = 0; s1[size]; size++)

@@ -9,11 +9,11 @@
 int *array_range(int min, int max)
 {
 	int i, j = 0;
-	char *m;
+	int *m;
 
 	if (min > max)
 		return (NULL);
-	m = malloc(max - min);
+	m = malloc(sizeof(*m) * (max - min));
 	if (m == 0)
 		return (NULL);
 

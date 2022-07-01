@@ -7,9 +7,9 @@
  * @argv: argument vector
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char const *argv[])
 {
-	unsigned int mul;
+	unsigned int mul = 1;
 	int i;
 
 	if (argc != 3)

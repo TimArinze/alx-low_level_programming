@@ -11,6 +11,12 @@ int main(int argc, char *argv[])
 {
 	int mul = 1, i;
 
+	for (i = 1; i < argc; i++)
+	{
+		if (argc != 3 && (argv[i] < 0 || argv[i] > 9))
+			printf("Error\n");
+		exit(98);
+
 	if (argc == 3)
 	{
 		for (i = 1; i < argc; i++)

@@ -7,19 +7,22 @@
  * @argv: argument vector
  * Return: 0
  */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-	unsigned int mul = 1;
-	int i;
+	int mul = 1, i;
 
-	if (argc != 3)
+	if (argc == 3)
+	{
+		for (i = 1; i < argc; i++)
+		{
+			mul *= atoi(argv[i]);
+		}
+		printf("%d\n", mul);
+		return (0);
+	}
+	else
 	{
 		printf("Error\n");
-		exit(98);
+		return (98);
 	}
-	for (i = 1; i < argc; i++)
-		mul *= atoi(argv[i]);
-
-	printf("%d\n", mul);
-	return (0);
 }

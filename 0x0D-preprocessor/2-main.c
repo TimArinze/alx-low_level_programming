@@ -1,3 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define PRINT_TOKEN(token) printf(#token " is %d", token)
+/**
+ * main - Entry function
+ * Return: 0
+ */
+int main(void)
+{
+	printf("%s\n", __FILE__);
+	return (0);
+}

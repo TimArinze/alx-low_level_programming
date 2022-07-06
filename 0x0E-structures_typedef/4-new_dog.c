@@ -15,12 +15,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *bingo;
 	/* the new dog name is bing*/
 
-	if (name == NULL || age < 0 || owner == NULL)
-		return (NULL);
 	bingo = malloc(sizeof(dog_t));
 	if (bingo == NULL)
-		free(bingo);
 		return (NULL);
+
 	len_name = strlen(name);
 	bingo->name = malloc(sizeof(char) * len_name + 1);
 

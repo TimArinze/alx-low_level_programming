@@ -7,22 +7,17 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int sum = 0, i = 0;
-
-	if (n == 0)
-		return (0);
-
-	/* Declaring pointer to the argument list */
 	va_list ptr;
+	unsigned int sum = 0, i = 0;
 
 	/*Initializing argument to the list pointer*/
 	va_start(ptr, n);
-
-	while (i < n)
-	{
-		sum += va_arg(ptr, int);
-		i++;
-	}
+	if (n != 0)
+		while (i < n)
+		{
+			sum += va_arg(ptr, unsigned int);
+			i++;
+		}
 	va_end(ptr);
 
 	return (sum);

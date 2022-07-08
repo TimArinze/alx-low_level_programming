@@ -35,9 +35,11 @@ void print_str(va_list ptr)
 	char *c = va_arg(ptr, char *);
 
 	if (c == NULL)
+	{
 		printf("(nil)");
-	else
-		printf("%s", c);
+		return;
+	}
+	printf("%s", c);
 }
 /**
  * print_all - function
@@ -45,7 +47,7 @@ void print_str(va_list ptr)
  */
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	int i = 0, j = 0;
 	va_list ptr;
 	char *separator = "";
 
@@ -59,17 +61,21 @@ void print_all(const char * const format, ...)
 
 	va_start(ptr, format);
 
-	for (i = 0; format && format[i]; i++)
+	while (format && format[i])
 	{
-		for (j = 0; j < 4; j++)
+		j = 0;
+		while (j < 4)
 		{
 			if (*printType[j].type == format[i])
 			{
 				printf("%s", separator);
+				printType[j].printer(ptr);
 				separator = ", ";
 				break;
 			}
+			j++;
 		}
+		i++;
 	}
 	printf("\n");
 	va_end(ptr);

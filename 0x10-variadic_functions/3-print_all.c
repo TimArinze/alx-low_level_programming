@@ -4,7 +4,7 @@
 #include <stdlib.h>
 /**
  * print_int - function
- * @ptr
+ * @ptr: list
  */
 void print_int(va_list ptr)
 {
@@ -12,7 +12,7 @@ void print_int(va_list ptr)
 }
 /**
  * print_float - function
- * @ptr
+ * @ptr: list
  */
 void print_float(va_list ptr)
 {
@@ -20,7 +20,7 @@ void print_float(va_list ptr)
 }
 /**
  * print_char - function
- * @ptr
+ * @ptr: list
  */
 void print_char(va_list ptr)
 {
@@ -28,11 +28,12 @@ void print_char(va_list ptr)
 }
 /**
  * print_str - function
- * @ptr
+ * @ptr: list
  */
 void print_str(va_list ptr)
 {
 	char *c = va_arg(ptr, char *);
+
 	if (c == NULL)
 		printf("(nil)");
 	else
@@ -40,7 +41,7 @@ void print_str(va_list ptr)
 }
 /**
  * print_all - function
- * @format:
+ * @format: type
  */
 void print_all(const char * const format, ...)
 {

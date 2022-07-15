@@ -9,9 +9,9 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t i = 0;
+	size_t i;
 
-	for (; h[i]; i++)
+	for (i = 0; h; i++)
 	{
 		if (h->str == NULL)
 			printf("[0] (nil)\n");

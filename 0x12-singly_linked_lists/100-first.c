@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "list.h"
+void first(void) __attribute__ ((constructor));
 /**
  * first_print - a function that prints a statement below
  */

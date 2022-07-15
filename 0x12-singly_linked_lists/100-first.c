@@ -1,9 +1,8 @@
 #include <stdio.h>
-void first_print(void) __attribute__ ((constructor));
 /**
- * first_print - a function that prints a statement below
+ * premain - a function that prints a statement before main
  */
-void first_print(void)
+void __attribute__ ((constructor)) premain()
 {
 	printf("You're beat! and yet, you must allow,\nI bore my house upon my
 			back!\n");

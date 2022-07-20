@@ -11,7 +11,7 @@ int main(void)
 	add_nodeint_end(&head, 1);
 	add_nodeint_end(&head, 2);
 	print_listint(head);
-	free_listint2(head);
+	free_listint(head);
 	head = NULL;
 	return (0);
 }

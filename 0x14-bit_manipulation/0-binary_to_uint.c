@@ -1,6 +1,5 @@
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
+#include <stdlib.h>
 /**
  * _atoi - atoi
  * @s: string

@@ -11,10 +11,13 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int binary, reminder, weight = 1, decimal = 0;
+	unsigned int i, binary, reminder, weight = 1, decimal = 0;
 
 	if (b == NULL)
 		return (0);
+	for (i = 0; b[i]; i++)
+		if (b[i] < '0' || b[i] > '1')
+			return (0);
 
 	binary = atoi(b);
 
@@ -28,7 +31,7 @@ unsigned int binary_to_uint(const char *b)
 			weight = weight * 2;
 		}
 		else
-			return (0);
+			decimal = 0;
 	}
 	return (decimal);
 }

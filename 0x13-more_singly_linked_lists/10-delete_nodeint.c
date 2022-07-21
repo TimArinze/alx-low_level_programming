@@ -11,14 +11,16 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *temp, *current;
 	/* current: is the current pointer we want to delete, prev the previous one*/
 
-	if (*head == NULL)
+	if (head == NULL || (*head) == NULL)
 		return (-1);
 	current = *head;
 	if (index == 0)
 	{
-		*head = (*head)->next;
+		if ((*head)->next)
+			*head = (*head)->next;
+		else
+			(*head) = NULL;
 		free(current);
-		current = NULL;
 		return (1);
 	}
 	while (index != 1)

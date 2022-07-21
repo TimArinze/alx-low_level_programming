@@ -2,6 +2,31 @@
 #include <string.h>
 #include "main.h"
 /**
+ * _atoi - atoi
+ * @s: string
+ * Return: int
+ */
+int _atoi(const char *s)
+{
+	int i, res = 0, sig = -1, brk = 0;
+
+	for (i = 0; s[i] != '\0'; ++i)
+	{
+		if (s[i] == '-')
+			sig = sig * -1;
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			res = res * 10;
+			res = res - (s[i] - '0');
+			brk = 1;
+		}
+		else if (brk == 1)
+			break;
+	}
+	res = sig * res;
+	return (res);
+}
+/**
  * binary_to_uint - Function that converts a binary
  * to an unsigned int
  * @b: string to be convert
@@ -19,7 +44,7 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] < '0' || b[i] > '1')
 			return (0);
 
-	binary = atoi(b);
+	binary = _atoi(b);
 
 	while (binary != 0)
 	{

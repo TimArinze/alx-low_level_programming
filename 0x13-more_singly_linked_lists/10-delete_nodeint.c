@@ -8,4 +8,31 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	
+	listint_t *temp, *current;
+	/* current: is the current pointer we want to delete, prev the previous one*/
+
+	if (*head == NULL)
+		return (-1);
+	current = *head;
+	if (index == 0)
+	{
+		*head = (*head)->next;
+		free(current);
+		current = NULL;
+		return (1);
+	}
+	while (index != 1)
+	{
+		if (current->next == NULL)
+			return (-1);
+		current = current-next;
+		index--;
+	}
+	temp = current->next;
+	if (current->next->next)
+		current->next = current->next->next;
+	else
+		current->next = NULL;
+	free(temp);
+	return (1);
+}

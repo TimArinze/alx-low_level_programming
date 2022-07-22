@@ -23,7 +23,8 @@ int _strlen(const char *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int len, i, decimal = 0;
+	unsigned int len, decimal = 0;
+	int i;
 
 
 	if (b == NULL)
@@ -38,7 +39,6 @@ unsigned int binary_to_uint(const char *b)
 			/* this shifts it thats like multiply by 2*/
 		}
 		else if (b[len - i - 1] != '0')
-			return (0);
 	}
 	return (decimal);
 }

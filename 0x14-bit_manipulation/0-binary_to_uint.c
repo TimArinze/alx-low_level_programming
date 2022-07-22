@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * _strlen - strlen
  * @s: pointer
@@ -11,7 +12,7 @@ int _strlen(const char *s)
 
 	for (i = 0; s[i]; i++)
 		;
-	return(i);
+	return (i);
 }
 /**
  * binary_to_uint - Function that converts a binary
@@ -23,13 +24,15 @@ int _strlen(const char *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int len, i, decimal = 0;
+	unsigned int decimal = 0;
+	int i, len;
 
 
 	if (b == NULL)
 		return (0);
 
 	len = _strlen(b);
+
 	for (i = 0; i != len; i++)
 	{
 		if (b[len - i - 1] == '1')

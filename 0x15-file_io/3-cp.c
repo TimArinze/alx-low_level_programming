@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
-	if (out_fd == -1)
+	if (output_fd == -1)
 	{
 		dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 		exit(99);

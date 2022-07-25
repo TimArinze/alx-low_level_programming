@@ -23,7 +23,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	fd = open(*filename, O_RDWR);
+	fd = open(filename, O_RDWR);
 
 	if (fd == -1)
 		return (0);
@@ -36,7 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	readcount = read(fd, buffer, letters);
 	if (readcount == -1)
 		return (0);
-	writecount(STDOUT_FILENO, buffer, letters);
+	writecount = write(STDOUT_FILENO, buffer, letters);
 	if (writecount == -1 || writecount != readcount)
 		return (0);
 	free(buffer);

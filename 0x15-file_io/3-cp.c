@@ -1,13 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#define SE STDERR_FILENO
+#include "main.h"
+
+void close_file(int fd);
+/**
+ * close_file - to close the file
+ *
+ * @fd: file descriptor to be closed
+ */
+void close_file(int fd)
+{
+	int c;
+
+	c = close(fd);
+	if (c == -1)
+	{
+		dprintf(SE, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
 /**
  * main - Entry function
- *
  * @argc: the number
  * @argv: array of string
  * Return: 0
@@ -16,11 +27,12 @@ int main(int argc, char *argv[])
 {
 	int input_fd, output_fd, istatus, ostatus;
 	char buffer[1024];
+	mode_t mode;
 
+	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	if (argc != 3)
 	{
 		dprintf(SE, "Usage: cp file_from file_to\n");
-		/* SE is for standard error */
 		exit(97);
 	}
 	input_fd = open(argv[1], O_RDONLY);
@@ -29,7 +41,7 @@ int main(int argc, char *argv[])
 		dprintf(SE, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
+	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
 	if (output_fd == -1)
 	{
 		dprintf(SE, "Error: Can't write to %s\n", argv[2]);
@@ -48,22 +60,8 @@ int main(int argc, char *argv[])
 			dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
-	}
-	while (istatus > 0);
-
-
-	istatus = close(input_fd);
-	if (istatus == -1)
-	{
-		dprintf(SE, "Error: Can't close fd %d\n", input_fd);
-		exit(100);
-	}
-	ostatus = close(output_fd);
-	if (ostatus == -1)
-	{
-		dprintf(SE, "Error: Can't close fd %d\n", output_fd);
-		exit(100);
-	}
-
+	} while (istatus > 0);
+	close_file(input_fd);
+	close_file(output_fd);
 	return (0);
 }

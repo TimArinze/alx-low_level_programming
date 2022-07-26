@@ -26,7 +26,7 @@ void close_file(int fd)
 int main(int argc, char *argv[])
 {
 	int input_fd, output_fd, istatus, ostatus;
-	char buffer[1204];
+	char buffer[1024];
 	mode_t mode;
 
 	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;

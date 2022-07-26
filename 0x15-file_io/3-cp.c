@@ -1,7 +1,6 @@
 #include "main.h"
-#define BUFFSIZE 1204
+#define BUFFSIZE 1024
 
-void close_file(int fd);
 /**
  * close_file - to close the file
  *
@@ -28,9 +27,7 @@ int main(int argc, char *argv[])
 {
 	int input_fd, output_fd, istatus, ostatus;
 	char buffer[BUFFSIZE];
-	mode_t mode;
 
-	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	if (argc != 3)
 	{
 		dprintf(SE, "Usage: cp file_from file_to\n");
@@ -42,7 +39,7 @@ int main(int argc, char *argv[])
 		dprintf(SE, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	if (output_fd == -1)
 	{
 		dprintf(SE, "Error: Can't write to %s\n", argv[2]);

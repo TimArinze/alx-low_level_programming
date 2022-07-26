@@ -1,5 +1,5 @@
 #include "main.h"
-#define BUFFSIZE 1024
+#define BUFFSIZE 1204
 
 void close_file(int fd);
 /**

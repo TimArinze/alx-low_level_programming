@@ -26,7 +26,7 @@ void close_file(int fd)
 int main(int argc, char *argv[])
 {
 	int input_fd, output_fd, istatus, ostatus;
-	char *buffer;
+	char buffer[1204];
 	mode_t mode;
 
 	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
@@ -35,7 +35,6 @@ int main(int argc, char *argv[])
 		dprintf(SE, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buffer = malloc(sizeof(char) * 1024);
 	input_fd = open(argv[1], O_RDONLY);
 	if (input_fd == -1)
 	{
@@ -52,14 +51,12 @@ int main(int argc, char *argv[])
 		istatus = read(input_fd, buffer, 1024);
 		if (istatus == -1)
 		{
-			free(buffer);
 			dprintf(SE, "Error:Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 		ostatus = write(output_fd, buffer, 1024);
 		if (ostatus == -1)
 		{
-			free(buffer);
 			dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}

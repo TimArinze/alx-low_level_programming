@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 			dprintf(SE, "Error:Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		ostatus = write(output_fd, buffer, 1024);
+		ostatus = write(output_fd, buffer, (ssize_t) istatus);
 		if (ostatus == -1)
 		{
 			dprintf(SE, "Error: Can't write to %s\n", argv[2]);

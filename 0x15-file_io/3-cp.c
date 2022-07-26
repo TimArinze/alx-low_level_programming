@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	int input_fd, output_fd, istatus, ostatus;
 	char buffer[BUFFSIZE];
 
-	mode t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	if (argc != 3)
 	{
 		dprintf(SE, "Usage: cp file_from file_to\n");

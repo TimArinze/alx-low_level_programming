@@ -1,4 +1,5 @@
 #include "main.h"
+#define BUFFSIZE 1024
 
 void close_file(int fd);
 /**
@@ -26,7 +27,7 @@ void close_file(int fd)
 int main(int argc, char *argv[])
 {
 	int input_fd, output_fd, istatus, ostatus;
-	char buffer[1024];
+	char buffer[BUFFSIZE];
 	mode_t mode;
 
 	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
@@ -48,14 +49,14 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	do {
-		istatus = read(input_fd, buffer, 1024);
+		istatus = read(input_fd, buffer, BUFFSIZE);
 		if (istatus == -1)
 		{
 			dprintf(SE, "Error:Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
 		ostatus = write(output_fd, buffer, (ssize_t) istatus);
-		if (ostatus == -1)
+		if (ostatus > 0)
 		{
 			dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 			exit(99);

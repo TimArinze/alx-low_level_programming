@@ -1,5 +1,4 @@
 #include "main.h"
-#define BUFFSIZE 1024
 
 /**
  * close_file - to close the file
@@ -25,10 +24,9 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int input_fd, output_fd, istatus, ostatus;
-	char buffer[BUFFSIZE];
+	int input_fd, output_fd, x, istatus, ostatus;
+	char buffer[BUFSIZ];
 
-	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	if (argc != 3)
 	{
 		dprintf(SE, "Usage: cp file_from file_to\n");
@@ -40,30 +38,30 @@ int main(int argc, char *argv[])
 		dprintf(SE, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
-	if (output_fd == -1)
+	output_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((x = read(input_fd, buffer, BUFSIZ)) > 0)
 	{
-		dprintf(SE, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		if (output_fd < 0 || write(output_fd, buffer, x) != x)
+		{
+			dprintf(SE, "Error: Can't write to %s\n", argv[2]);
+			close(input_fd);
+			exit(99);
+		}
 	}
-	do {
-		istatus = read(input_fd, buffer, BUFFSIZE);
-		if (istatus == -1)
-		{
-			dprintf(SE, "Error:Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-		if (ostatus > 0)
-		{
-			ostatus = write(output_fd, buffer, (ssize_t) istatus);
-			if (ostatus == -1)
-			{
-				dprintf(SE, "Error: Can't write to %s\n", argv[2]);
-				exit(99);
-			}
-		}
-	} while (istatus > 0);
-	close_file(input_fd);
-	close_file(output_fd);
+	if (x < 0)
+	{
+		dprintf(SE, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	istatus = close(input_fd);
+	ostatus = close(output_fd);
+	if (istatus < 0 || ostatus < 0)
+	{
+		if (istatus < 0)
+			dprintf(SE, "Error: Can't close fd %d\n", input_fd);
+		if (ostatus < 0)
+			dprintf(SE, "Error: Can't close fd %d\n", output_fd);
+		exit(100);
+	}
 	return (0);
 }

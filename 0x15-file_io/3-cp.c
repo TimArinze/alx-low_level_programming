@@ -55,11 +55,12 @@ int main(int argc, char *argv[])
 			dprintf(SE, "Error:Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-		ostatus = write(output_fd, buffer, (ssize_t) istatus);
 		if (ostatus > 0)
 		{
-			dprintf(SE, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
+			ostatus = write(output_fd, buffer, istatus);
+			if (ostatus == -1)
+				dprintf(SE, "Error: Can't write to %s\n", argv[2]);
+				exit(99);
 		}
 	} while (istatus > 0);
 	close_file(input_fd);

@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 		}
 		if (ostatus > 0)
 		{
-			ostatus = write(output_fd, buffer, istatus);
+			ostatus = write(output_fd, buffer, (ssize_t) istatus);
 			if (ostatus == -1)
 				dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 				exit(99);

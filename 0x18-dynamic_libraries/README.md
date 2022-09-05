@@ -10,4 +10,4 @@ copy the path
 export LD_LIBRARY_PATH=:/home/ubuntu/programs/dynamic_library
 
 for use in python compile this way
-cc -fPIC -shared -o libfun.so function.c
+gcc -shared -o libfun.so -fPIC function.c

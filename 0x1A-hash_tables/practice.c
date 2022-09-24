@@ -46,7 +46,7 @@ entry_t *ht_pair(const char *key, const char *value)
 ht_t *ht_create(void)
 {
 	// allocate table
-	ht_t *hastable = malloc(sizeof(ht_t));
+	ht_t *hashtable = malloc(sizeof(ht_t));
 
 	// allocate table entries
 	hashtable->entries = malloc(sizeof(entry_t *) * TABLE_SIZE);
@@ -60,7 +60,7 @@ ht_t *ht_create(void)
 	return hashtable;
 }
 
-void ht_set(ht_t *hashable, const char *key, const char *value)
+void ht_set(ht_t *hashtable, const char *key, const char *value)
 {
 	unsigned int slot = hash(key);
 
@@ -93,7 +93,7 @@ void ht_set(ht_t *hashable, const char *key, const char *value)
 	prev->next = ht_pair(key, value);
 }
 
-char *ht_get(ht_t *hashable, const char *key)
+char *ht_get(ht_t *hashtable, const char *key)
 {
 	unsigned int slot = hash(key);
 
@@ -145,7 +145,13 @@ void ht_dump(ht_t *hashtable)
 
 int main(int argc, char **argv)
 {
-	printf("%d\n", hash("em"));
+	ht_t *ht = ht_create();
+
+	ht_set(ht, "name1", "em");
+	ht_set(ht, "name2", "russian");
+	ht_set(ht, "name3", "doge");
+
+	ht_dump(ht);
 
 	return 0;
 }

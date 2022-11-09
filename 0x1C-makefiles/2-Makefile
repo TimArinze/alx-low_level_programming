@@ -1,7 +1,7 @@
 all: compile link
 CC = gcc
 SRC = school.c main.c
-OBJ = school.o main.o
+OBJ = $(SRC:.c=.o)
 NAME = school
 
 compile:

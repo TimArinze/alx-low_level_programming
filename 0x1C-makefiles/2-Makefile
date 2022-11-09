@@ -1,0 +1,10 @@
+all: compile link
+CC = gcc
+SRC = school.c main.c
+OBJ = school.o main.o
+NAME = school
+
+compile:
+	${CC} -c $(SRC)
+link:
+	${CC} $(OBJ) -o $(NAME)

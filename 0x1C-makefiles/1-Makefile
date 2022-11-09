@@ -1,5 +1,5 @@
-SRC := school.c main.c
-CC := gcc
+SRC = school.c main.c
+CC = gcc
 all: executable
 executable:
 	${CC} $(SRC) -o school

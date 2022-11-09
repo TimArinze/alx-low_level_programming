@@ -1,8 +1,6 @@
-all: m.h compile
 CC = gcc
 SRC = school.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-
-compile:
+all: m.h $(OBJ)
 	${CC} $(OBJ) -o $(NAME)

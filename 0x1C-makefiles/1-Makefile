@@ -1,4 +1,5 @@
 SRCS := $(wildcard *.c)
+CC := gcc
 all: executable
 executable:
 	${CC} $(SRCS) -o school

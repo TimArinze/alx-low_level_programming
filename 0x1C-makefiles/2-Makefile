@@ -1,10 +1,8 @@
-all: compile link
+all: compile
 CC = gcc
 SRC = school.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 
 compile:
-	${CC} -c $(SRC)
-link:
 	${CC} $(OBJ) -o $(NAME)

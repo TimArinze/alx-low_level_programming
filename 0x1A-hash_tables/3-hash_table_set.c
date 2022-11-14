@@ -38,8 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		else
 		{
+			free(ht->array[index]);
 			ht->array[index] = new;
-			new->next = NULL;
 		}
 	}
 	return (1);

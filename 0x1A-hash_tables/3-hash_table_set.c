@@ -36,7 +36,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			new->next = ht->array[index];
 			ht->array[index] = new;
 		}
-		else
+		else if (ht->array[index]->key == key)
 		{
 			free(ht->array[index]);
 			ht->array[index] = new;

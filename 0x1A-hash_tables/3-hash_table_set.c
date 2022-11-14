@@ -34,11 +34,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (ht->array[index]->key != new->key)
 		{
 			ht->array[index] = new;
+			new->next = ht->array[index];
 		}
 		else if (ht->array[index]->key == new->key)
 		{
-			free(ht->array[index]->value);
-			ht->array[index]->value = new->value;
+			ht->array[index] = new;
+			new->next = NULL;
 		}
 	}
 	return (1);

@@ -49,4 +49,4 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 size_t min(size_t a, size_t b);
 void print(int *array, size_t size);
 
-#endif
+#endif /* SEARCH_ALGORITHMS */

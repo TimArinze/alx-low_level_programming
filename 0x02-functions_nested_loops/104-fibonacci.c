@@ -25,7 +25,7 @@ int main(void)
 {
 	unsigned int i;
 
-	for (i = 2; i < 40; i++)
+	for (i = 2; i < 98; i++)
 	{
 		printf("%d, ", fibonacci(i));
 	}

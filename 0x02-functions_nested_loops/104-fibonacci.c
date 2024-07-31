@@ -5,18 +5,16 @@
  * @i: the fibonacci number you want
  * Return: fibonacci number
  */
-double fibonacci(double i)
+unsigned int fibonacci(unsigned int i)
 {
-	if (i == 0)
+	if (i <= 1)
 	{
-		return (0);
+		return(i);
 	}
-
-	if (i == 1)
+	else
 	{
-		return (1);
+		return(fibonacci(i - 1) + fibonacci(i - 2));
 	}
-	return (fibonacci(i - 1) + fibonacci(i - 2));
 }
 /**
  * main - Entry point
@@ -25,12 +23,12 @@ double fibonacci(double i)
  */
 int main(void)
 {
-	int i;
+	unsigned int i;
 
-	for (i = 2; i < 98; i++)
+	for (i = 2; i < 40; i++)
 	{
-		printf("%f, ", fibonacci(i));
+		printf("%d, ", fibonacci(i));
 	}
-	printf("%f\n", fibonacci(98));
+	printf("%d\n", fibonacci(i - 1));
 	return (0);
 }

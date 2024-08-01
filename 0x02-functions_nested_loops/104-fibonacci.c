@@ -5,15 +5,15 @@
  * @i: the fibonacci number you want
  * Return: fibonacci number
  */
-unsigned int fibonacci(unsigned int i)
+long fibonacci(int i)
 {
 	if (i <= 1)
 	{
-		return(i);
+		return (i);
 	}
 	else
 	{
-		return(fibonacci(i - 1) + fibonacci(i - 2));
+		return (fibonacci(i - 1) + fibonacci(i - 2));
 	}
 }
 /**
@@ -23,12 +23,12 @@ unsigned int fibonacci(unsigned int i)
  */
 int main(void)
 {
-	unsigned int i;
+	int i;
 
 	for (i = 2; i < 98; i++)
 	{
-		printf("%d, ", fibonacci(i));
+		printf("%ld, ", fibonacci(i));
 	}
-	printf("%d\n", fibonacci(i - 1));
+	printf("%ld\n", fibonacci(98));
 	return (0);
 }

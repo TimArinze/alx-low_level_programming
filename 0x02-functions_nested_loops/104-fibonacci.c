@@ -25,10 +25,10 @@ int main(void)
 {
 	int i;
 
-	for (i = 2; i < 98; i++)
+	for (i = 2; i < 60; i++)
 	{
 		printf("%ld, ", fibonacci(i));
 	}
-	printf("%ld\n", fibonacci(98));
+	printf("%ld\n", fibonacci(i));
 	return (0);
 }

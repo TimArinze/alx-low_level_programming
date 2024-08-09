@@ -1,34 +1,20 @@
-#include "main.h"
 #include <stdio.h>
+
 /**
- * print_array - Function that prints
- * arrays separated by commas
- * @n: array
- * @a: pointer
- * Return: void
+ * print_array - function that prints n element of an array of integers
+ * separated by commas and the last element ended by newline
+ * @a: first argument which is pointer to the array to be printed
+ * @n: size of the array
  */
+
 void print_array(int *a, int n)
 {
-	int size;
+	int i = 0;
 
-	size = n - 1;
-	if (size > 0)
+	while (i < n - 1)
 	{
-		n = 0;
-		while (a[n])
-		{
-
-			if (n < size)
-			{
-				printf("%i, ", a[n]);
-			}
-			if (n == size)
-			{
-				printf("%i\n", a[n]);
-			}
-			n++;
-		}
+		i++;
+		printf("%d, ", a[i]);
 	}
-	else
-		_putchar('\n');
+	printf("%d\n", a[n - 1]);
 }

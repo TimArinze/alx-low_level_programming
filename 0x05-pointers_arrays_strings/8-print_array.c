@@ -13,7 +13,7 @@ void print_array(int *a, int n)
 
 	if (a == NULL || n < 1)
 	{
-		printf("\n\n");
+		printf("\n");
 		return;
 	}
 	while (i < n - 1)

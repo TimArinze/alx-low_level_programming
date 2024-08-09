@@ -1,21 +1,16 @@
 #include "main.h"
 /**
- * puts2 - prints every other character from first
- * @str: String
- * Return: 0
+ * puts2 - prints every other character from first and jump the second
+ * @str: String argument
+ * Return: nothing
  */
+
 void puts2(char *str)
 {
-	int a = 0, b = 0;
-
-	while (str[a] != '\0')
+	while (*str != '\0')
 	{
-		a++;
-	}
-	while (b < a)
-	{
-		_putchar(str[b]);
-		b = b + 2;
+		_putchar(*str);
+		str = str + 2;
 	}
 	_putchar('\n');
 }

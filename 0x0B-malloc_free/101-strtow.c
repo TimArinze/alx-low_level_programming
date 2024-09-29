@@ -32,9 +32,9 @@ char **strtow(char *str)
 			for (l = i; str[l] != ' ' && str[l] != '\0'; l++)
 				;
 			_strlen = l - i;
-			arr[x] = malloc(_strlen + 1);
+			arr[x] = malloc(_strlen);
 			y = 0;
-			while (y <= _strlen)
+			while (y < _strlen)
 			{
 				arr[x][y] = str[i];
 				y++;

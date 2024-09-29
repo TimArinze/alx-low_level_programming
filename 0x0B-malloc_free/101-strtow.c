@@ -17,7 +17,7 @@ char **strtow(char *str)
 	string_num = count(str);
 	if (string_num == 0)
 		return (NULL);
-	arr = malloc(sizeof(char *) * (string_num + 1));
+	arr = malloc(sizeof(char *) * (string_num + 2));
 	if (arr == NULL)
 		return (NULL);
 	i = 0;

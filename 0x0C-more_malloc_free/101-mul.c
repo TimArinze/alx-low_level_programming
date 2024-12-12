@@ -9,26 +9,19 @@
  */
 int main(int argc, char *argv[])
 {
-	int mul = 1, i;
+	unsigned long num1;
+	unsigned long num2;
+	unsigned long mul;
 
-	for (i = 1; i < argc; i++)
-	{
-		if (argc != 3 && (argv[i] < 0 || argv[i] > 9))
-			printf("Error\n");
-		exit(98);
+	num1 = strtoul(argv[1], NULL, 10);
+	num2 = strtoul(argv[2], NULL, 10);
 
-	if (argc == 3)
-	{
-		for (i = 1; i < argc; i++)
-		{
-			mul *= atoi(argv[i]);
-		}
-		printf("%d\n", mul);
-		return (0);
-	}
-	else
+	if ((!num1 || !num2) && argc != 3)
 	{
 		printf("Error\n");
-		return (98);
+		exit(98);
 	}
+	mul = num1 * num2;
+	printf("%lu\n", mul);
+	return (0);
 }

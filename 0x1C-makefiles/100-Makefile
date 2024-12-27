@@ -1,0 +1,33 @@
+#Special targets
+.PHONY: all clean fclean oclean re
+# Variables
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Default target
+all: $(NAME)
+
+# Build the executable
+$(NAME): $(OBJ) m.h
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+# Clean up Emacs and Vim temporary files along with the excutables
+clean:
+	$(RM) *~ $(NAME)
+
+# Remove object files
+oclean:
+	$(RM) $(OBJ)
+
+# Full clean
+fclean: clean oclean
+
+# Recompile everything
+re: fclean all
+
+#Dependencies
+$(OBJ): m.h
